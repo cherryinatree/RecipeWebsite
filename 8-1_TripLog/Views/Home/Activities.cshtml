@@ -1,0 +1,43 @@
+﻿@model Trips
+@{
+    ViewData["Title"] = "Activities";
+
+    string control;
+    string action;
+
+    
+        control = "Home";
+        action = "Cancel";
+  
+
+}
+
+
+
+
+<form asp-action="ActivitiesPost" method="post">
+    <span asp-validation-for="ThingToDo1" class="text-danger"></span> <br>
+    <span asp-validation-for="ThingToDo2" class="text-danger"></span> <br>
+    <span asp-validation-for="ThingToDo3" class="text-danger"></span> <br>
+
+    <div class="mb-3">
+        <label asp-for="ThingToDo1" class="form-label">ThingToDo1</label>
+        <input asp-for="ThingToDo1" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ThingToDo2" class="form-label">ThingToDo2</label>
+        <input asp-for="ThingToDo2" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="ThingToDo3" class="form-label">ThingToDo3</label>
+        <input asp-for="ThingToDo3" class="form-control">
+    </div>
+
+    <input type="hidden" asp-for="TripsId" />
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-controller="@control" asp-action="@action"
+        class="btn btn-primary">Cancel</a>
+</form>

@@ -1,0 +1,46 @@
+﻿@model TicTac
+
+@{
+    ViewData["Title"] = "Home Page";
+
+    string banner = ViewBag.Action;
+
+
+    
+}
+
+<div class="text-center">
+    <h2 class="display-4">@banner</h2>
+    
+    
+    <form asp-action="Update" method="post">
+        <button asp-controller="Home" asp-action="NewGame" asp-route-id="Id"
+        class="btn btn-primary">New Game</button>
+        <div>
+            <div class="butDiv">
+                <button type="submit" asp-controller="Home" asp-action="Update" asp-route-id="1" class="butStyle"><p>@Model.square1</p></button>
+             
+                <button type="submit" asp-controller="Home" asp-action="Update"  asp-route-id="2" class="butStyle"><p>@Model.square2</p></button>
+            
+                <button type="submit" asp-controller="Home" asp-action="Update"  asp-route-id="3" class="butStyle"><p>@Model.square3</p></button>
+            </div>
+            <div class="butDiv">
+                
+                <button type="submit" asp-controller="Home" asp-action="Update"  asp-route-id="4" class="butStyle"><p>@Model.square4</p></button>
+                
+                <button type="submit" asp-controller="Home" asp-action="Update"  asp-route-id="5" class="butStyle"><p>@Model.square5</p></button>
+                
+                <button type="submit" asp-controller="Home" asp-action="Update"  asp-route-id="6" class="butStyle"><p>@Model.square6</p></button>
+            </div>
+            <div class="butDiv">
+                
+                <button type="submit" asp-controller="Home" asp-action="Update"  asp-route-id="7" class="butStyle"><p>@Model.square7</p></button>
+                
+                <button type="submit" asp-controller="Home" asp-action="Update"  asp-route-id="8" class="butStyle"><p>@Model.square8</p></button>
+                
+                <button type="submit" asp-controller="Home" asp-action="Update"  asp-route-id="9" class="butStyle"><p>@Model.square9</p></button>
+            </div>
+        
+        </div>
+    </form>
+</div>

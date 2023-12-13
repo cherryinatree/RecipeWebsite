@@ -1,0 +1,13 @@
+﻿body {
+}
+
+.butStyle {
+    width: 100px;
+    height: 100px;
+    margin:1px;
+}
+p {
+    height: 24px;
+    margin: 0px;
+    padding: 0px;
+}

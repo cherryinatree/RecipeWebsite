@@ -1,0 +1,56 @@
+﻿@model Trips
+@{
+    ViewData["Title"] = "Destination";
+
+    string control;
+    string action;
+
+
+        control = "Home";
+        action = "Cancel";
+    
+
+    /********************************************************
+     * 
+     * 
+     *  I am very confused on what to do about the Required 
+     *  message. It keeps saying that the required fields are
+     *  missing because of the fact that the object is being
+     *  filled in over multiple pages. Everything works, I just
+     *  don't know how to make that message go away. 
+     * 
+     * 
+     ********************************************************/
+}
+
+
+
+
+<form asp-action="Destination" method="post">
+    <span asp-validation-for="Destination" class="text-danger"></span>
+
+    <div class="mb-3">
+        <label asp-for="Destination" class="form-label">Destination</label>
+        <input asp-for="Destination" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Accommodation" class="form-label">Accommodations? (optional)</label>
+        <input asp-for="Accommodation" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="StartDate" class="form-label">Phone Number</label>
+        <input asp-for="StartDate" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="EndDate" class="form-label">Email</label>
+        <input asp-for="EndDate" class="form-control">
+    </div>
+
+    <input type="hidden" asp-for="TripsId" />
+
+    <button type="submit" class="btn btn-primary" >@ViewBag.Action</button>
+    <a asp-controller="@control" asp-action="@action"
+        class="btn btn-primary">Cancel</a>
+</form>

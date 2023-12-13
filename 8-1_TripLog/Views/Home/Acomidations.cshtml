@@ -1,0 +1,40 @@
+﻿@model Trips
+@{
+    ViewData["Title"] = "Accommodations";
+
+    string control;
+    string action;
+
+    
+        control = "Home";
+        action = "Cancel";
+ 
+
+}
+
+
+
+
+<form asp-action="AcomidationsPost" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Accommodation" class="form-label">First Name</label>
+        <input asp-for="Accommodation" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="AccommodationEmail" class="form-label">Last Name</label>
+        <input asp-for="AccommodationEmail" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="AccommodationPhone" class="form-label">Phone Number</label>
+        <input asp-for="AccommodationPhone" class="form-control">
+    </div>
+
+    <input type="hidden" asp-for="TripsId" />
+
+    <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+    <a asp-controller="@control" asp-action="@action"
+        class="btn btn-primary">Cancel</a>
+</form>
